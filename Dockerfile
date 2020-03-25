@@ -4,6 +4,12 @@ MAINTAINER Efa-GmbH <team@efa-gmbh.com>
 # Copy installation scripts in
 COPY *.sh ./
 
+RUN apt-get update
+RUN apt-get install -y libconfig-dev
+RUN apt-get install -y ffmpeg
+RUN apt-get install -y net-tools
+RUN apt-get install -y curl
+
 # Prepare the system
 RUN ./setup.sh
 # Install dependencies
@@ -13,7 +19,7 @@ RUN ./extras.sh
 # Install libsrtp 2.0.0 (To reduce risk of broken interoperability with future WebRTC versions)
 RUN ./libsrtp.sh
 # Install usrsctp for data channel support
-RUN ./usrsctp.sh
+# RUN ./usrsctp.sh
 # Install websocket dependencies
 RUN ./websockets.sh
 
