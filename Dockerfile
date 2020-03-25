@@ -19,7 +19,7 @@ RUN ./extras.sh
 # Install libsrtp 2.0.0 (To reduce risk of broken interoperability with future WebRTC versions)
 RUN ./libsrtp.sh
 # Install usrsctp for data channel support
-# RUN ./usrsctp.sh
+RUN ./usrsctp.sh
 # Install websocket dependencies
 RUN ./websockets.sh
 
