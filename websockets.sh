@@ -1,8 +1,8 @@
 cd ~
-git clone https://github.com/warmcat/libwebsockets.git
+git clone https://libwebsockets.org/repo/libwebsockets
 cd libwebsockets
-git checkout v2.1.0
+git checkout v2.4-stable
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
+cmake -DLWS_MAX_SMP=1 -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_C_FLAGS="-fpic" ..
 make && sudo make install
