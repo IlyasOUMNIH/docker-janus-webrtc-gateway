@@ -21,13 +21,13 @@ RUN ./usrsctp.sh
 # Install websocket dependencies
 RUN ./websockets.sh
 
-# Copy the apache configuration files ready for when we need them
-COPY apache2/*.conf ./
-# Install and prepare apache
-RUN ./apache.sh
-
 # Clone, build and install the gateway
 RUN ./janus.sh
+
+# Copy the apache configuration files ready for when we need them
+COPY nginx/* ./
+# Install and Setup NGINX
+RUN ./nginx.sh
 
 # Declare the ports we use
 EXPOSE 80 7088 8088 8188 8004 8004/udp
