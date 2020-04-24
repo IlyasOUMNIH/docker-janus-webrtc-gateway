@@ -2,7 +2,7 @@ apt-get install -y nginx
 apt-get install -y libnginx-mod-rtmp
 cp ./default /etc/nginx/sites-enabled/default
 cp ./janus.js /opt/janus/share/janus/demos/janus.js
-echo $'
+echo '
 # RTMP Stream
 rtmp {
     server {
